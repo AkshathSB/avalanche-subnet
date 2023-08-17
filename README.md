@@ -32,7 +32,7 @@ no
 ```
 Then your subnet is succesfully created subnet config
 
-#### Deployin the subnet
+#### Deploying the subnet
 To deploy the subnet run:
 ``` shell
 avalanche subnet deploy <subnet_name>
