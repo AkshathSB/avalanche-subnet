@@ -16,13 +16,13 @@ To create a subnet run:
 avalanche subnet create <subnet_name>
 ```
 then a prompt is shown to enter a ChainId of your own choice
-``` shell
+
 you can type any sequential number of your choice for your ChainId
-```
+
 and then once your ChainId is created it prompts to create a token symbol of your choice
-``` shell
+
 Enter your token symbol
-```
+
 after your token symbol is created make sure to choose these options which will be prompted:
 ```shell
 Use the latest version
