@@ -9,7 +9,42 @@ This program is a simple contract written in Solidity, a programming language us
 ## Getting Started
 
 ### Executing program
+
 #### Creating a subnet
+To create a subnet run:
+``` shell
+avalanche subnet create <subnet_name>
+```
+then a prompt is shown to enter a ChainId of your own choice
+``` shell
+you can type any sequential number of your choice for your ChainId
+```
+and then once your ChainId is created it prompts to create a token symbol of your choice
+``` shell
+Enter your token symbol
+```
+after your token symbol is created make sure to choose these options which will be prompted:
+```shell
+Use the latest version
+Low disk use
+Airdrop 1 million tokens to the default address (do not use in production)
+no
+```
+Then your subnet is succesfully created subnet config
+
+#### Deployin the subnet
+To deploy the subnet run:
+``` shell
+avalanche subnet deploy <subnet_name>
+```
+once that is ran, it deploys the subnet to local network VMs
+and then which are provided further details about the subnet such RPC URL, Chain ID, Network name etc, all which are 
+helpful for linking the subnet network to your metamask.
+
+#### Connecting the network to your metamask
+To connect the subnet create a new network under networks and enter the requested details to which are all given back in your command prompt as mentioned above.
+
+#### Compiling and deploying the contract over the subnet
 
 To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
 
@@ -17,19 +52,9 @@ Once you are on the Remix website, create a new file by clicking on the "+" icon
 
 To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.17" (or another compatible version), and then click on the "Compile Game.sol" button.
 
-Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the contracts address from the dropdown menu, and then you can view the contracts functions.
+Once the code is compiled, we need to change the environment to injected provider which opens the metmask asking for conformation to connect to the subnet once approved select the account with 1million tokens and the deploy the contract.
 
-Once the contract is deployed, you can interact with it by calling the "gains" and other functions. Click on the "" contract in the left-hand sidebar, and then click on the "mint" & "deploy" function and enter the required inputs (address, uint-value) and also to interact with the "transfer" function have to enter to_address, uint-value in the "transfer" function . Finally, click on the "transact" button to execute the functions. Once the transact button is clicked a popup appears showing the request of that function in the metamask interface asking for conformation once it is confirmed they can view the changes appeared in the contract (for eg., seeing the difference in balanceof function once mint and burn is executed).
-
-To deploy the token on the fuji network run the "deploy.js" with the command
-``` shell
-npx hardhat run scripts/deploy.js --network fuji
-```
-then to verify and receive the snowtrace website link to that contract run, NOTE: The contract address is the address received when the above command is executed, it is also to which address the token is deployed to.
-``` shell
-npx hardhat verify <contract address> --network fuji
-```
-and then finally your token would be deployed locally on the hardhat network
+Once the contract is deployed, you can interact with it by calling the "gains" and other functions. Where the "gains" function helps the player to get more health using the "roid energy" which is limited using the require error handler. There are also other functions such as mint and burn fucntions to add or burn tokens to a requested account by providing the address respectively
 
 ## Help
 
